@@ -1,0 +1,357 @@
+@media screen and (min-width: 1201px){
+
+    .header{
+        display: block;
+        width: auto;
+        height: 40px;
+    }
+
+    .header h1{
+        display: block;
+        height: 100%;
+        margin-left: 1%;
+        float: left;
+        font-size: 20px;
+        line-height: 40px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+    .header .burger{
+        display: none;
+    }
+
+    .header input{
+        display: none;
+    }
+
+    .header .nav-bar{
+        display: flex;
+        float: right;
+    }
+
+    .header .nav-bar li{
+        align-items: center;
+    }
+
+    .header .nav-bar li a{
+        display: block;
+        font-size: 16px;
+        line-height: 40px;
+        height: 100%;
+        width: 100px;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+        font-weight: bold;
+    }
+
+    .header .nav-bar li a:hover{
+        color: 	#ADADAD;
+        transition: 0.1s;
+    }
+
+    .welcome{
+        display: flex;
+        width: auto;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        background-color: #E0E0E0;
+        margin-bottom: 30px;
+    }
+
+    .welcome h1{
+        font-size: 24px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+        letter-spacing: 2px;
+    }
+
+    .content{
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+    }
+
+    .content .items{
+        display: block;
+        width: 1200px;
+        height: auto;
+    }
+
+    .content .items li{
+        display: block;
+        float: left;
+        width: 260px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .content .items li img{
+        display: block;
+        max-width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .content .items li span{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+}
+
+/* -------------------------------- */
+
+@media screen and (min-width: 601px) and (max-width: 1200px){
+    
+    .header{
+        display: block;
+        width: auto;
+        height: 40px;
+    }
+
+    .header .burger{
+        display: none;
+    }
+
+    .header input{
+        display: none;
+    }
+
+    .header h1{
+        display: block;
+        height: 100%;
+        margin-left: 1%;
+        float: left;
+        font-size: 20px;
+        line-height: 40px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+    .header .nav-bar{
+        display: flex;
+        float: right;
+    }
+
+    .header .nav-bar li{
+        align-items: center;
+    }
+
+    .header .nav-bar li a{
+        display: block;
+        font-size: 16px;
+        line-height: 40px;
+        height: 100%;
+        width: 100px;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+        font-weight: bold;
+    }
+
+    .header .nav-bar li a:hover{
+        color: 	#ADADAD;
+        transition: 0.1s;
+    }
+
+    .welcome{
+        display: flex;
+        width: auto;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        background-color: #E0E0E0;
+        margin-bottom: 30px;
+    }
+
+    .welcome h1{
+        font-size: 24px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+        letter-spacing: 2px;
+    }
+
+    .content{
+        display: flex;
+        width: auto;
+        justify-content: center;
+    }
+
+    .content .items{
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .content .items li{
+        display: block;
+        flex: none;
+        width: 48%;
+        height: auto;
+        padding: 1%;
+        margin-bottom: 30px;
+    }
+
+    .content .items li img{
+        display: block;
+        max-width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .content .items li span{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .header{
+        display: block;
+        width: auto;
+        height: 40px;
+        position: relative;
+    }
+
+    .header .burger{
+        float: right;
+        padding-right: 10px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .header input{
+        display: none;
+    }
+
+    .header .burger img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .header h1{
+        display: block;
+        height: 100%;
+        margin-left: 1%;
+        float: left;
+        font-size: 20px;
+        line-height: 40px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+    .header .nav-bar{
+        display: block;
+        float: right;
+        clear: both;
+        box-shadow: 0px 1px 2px rgb(30,30,30);
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .header input:checked ~ .nav-bar{
+        max-height: 170px;
+    }
+
+    .header .nav-bar li{
+        display: block;
+        width: 175px;
+        border-bottom: 1px solid #D0D0D0;
+        text-align: center;
+    }
+
+    .header .nav-bar li a{
+        display: block;
+        width: 175px;
+        color: #272727;
+        font-size: 18px;
+        font-family: 'Noto Sans TC', sans-serif;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .header .nav-bar li a:hover{
+        color: white;
+        background-color: #5d5d5d;
+    }
+
+    .welcome{
+        display: flex;
+        width: auto;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        background-color: #E0E0E0;
+    }
+
+    .welcome h1{
+        font-size: 24px;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+        letter-spacing: 3px;
+    }
+
+    .content{
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+    }
+
+    .content .items{
+        display: block;
+        width: 90%;
+        height: auto;
+    }
+
+    .content .items li{
+        display: block;
+        padding: 1%;
+        width: 98%;
+        margin-bottom: 30px;
+    }
+
+    .content .items li img{
+        display: block;
+        max-width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .content .items li span{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #272727;
+    }
+
+}
