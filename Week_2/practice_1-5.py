@@ -70,7 +70,6 @@ def twoSum(nums, target):
     for i in nums:
         if (target - i) in nums:
             return [nums.index(i),nums.index(target - i)]
-            break
 
 print("\n#4")
 result = twoSum([2, 11, 7, 15], 9)
