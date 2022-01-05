@@ -53,14 +53,22 @@ def maxProduct(nums):
                 temp = nums[j]
                 nums[j] = nums[i]
                 nums[i] = temp
+    
+    if len(nums) == 2:
+        return nums[0] * nums[1]
 
-    return nums[0] * nums[1]
+    elif (nums[-1] * nums[-2]) >= (nums[0] * nums[1]):
+        return nums[-1] * nums[-2]
+    
+    else:
+        return nums[0] * nums[1]
 
 print("\n#3")
 print(maxProduct([5, 20, 2, 6]))
 print(maxProduct([10, -20, 0, 3]))
 print(maxProduct([-1, 2]))
 print(maxProduct([-1, 0, 2]))
+print(maxProduct([-1, -2, 0]))
 
 # -------------------------------------------
 

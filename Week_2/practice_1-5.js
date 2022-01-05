@@ -58,7 +58,18 @@ function maxProduct(nums){
             }
         }
     }
-    return nums[0] * nums[1]
+    if (nums.length == 2){
+        return nums[0] * nums [1]
+    }
+
+    else if ((nums[nums.length - 1] * nums[nums.length - 2]) >= (nums[0] * nums[1])){
+        return nums[nums.length - 1] * nums[nums.length - 2]
+    }
+
+    else{
+        return nums[0] * nums [1]
+    }
+
 }
 
 console.log("\n#3")
@@ -66,6 +77,7 @@ console.log(maxProduct([5, 20, 2, 6]))
 console.log(maxProduct([10, -20, 0, 3]))
 console.log(maxProduct([-1, 2]))
 console.log(maxProduct([-1, 0, 2]))
+console.log(maxProduct([-1, -2, 0]))
 
 // -------------------------------------------
 
