@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="static/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="static/style.css"/>
+    <title>Member System</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="home_section container dFont">
+            <h1>Login</h1>
+            <form action="/signin" class="login_form" method="POST">
+                <input type="text" name="username" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+                <input type="password" name="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+                <button class="btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
