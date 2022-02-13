@@ -19,11 +19,15 @@ class DBManager:
         except Exception:
             self.connection.rollback()
 
-    def showUsers(self):
-        self.cursor.execute("SELECT `username` FROM `member`;")
-        users = self.cursor.fetchall()
+    def checkNewUser(self, newUser):
+        self.cursor.execute(f"SELECT `username` FROM `member` WHERE `username` = \"{newUser}\";")
 
-        return users
+        try:
+            if self.cursor.fetchall()[0]:
+                return True
+
+        except IndexError:
+            return False
 
     def getUserInfo(self, username):
         self.cursor.execute(f"SELECT `name`, `username`, `password` FROM `member` WHERE `username` = \"{username}\";")

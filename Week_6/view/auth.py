@@ -37,12 +37,8 @@ def signup():
 	signupName = request.form["signup-name"]
 	signupUsername = request.form["signup-username"]
 	signupPwd = request.form["signup-pwd"]
-	usernameList = ()
 
-	for username in db.showUsers():
-		usernameList += username
-	
-	if signupUsername in usernameList:
+	if db.checkNewUser(signupUsername):
 		return redirect(url_for(".error") + "?message=invalid_username")
 	
 	else:
