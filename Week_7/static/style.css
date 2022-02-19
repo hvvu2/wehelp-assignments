@@ -1,0 +1,550 @@
+/* === Global Color === */
+:root{
+    --primary: #0FF280;
+    --sub: #2EFF96;
+    --txt: #5B5B5B;
+    --border: #E3E3E3;
+    --error: #FF2D2D;
+}
+
+/* === Global Attributes === */
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.v-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.h-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 5px 14px 28px 3px var(--border),
+    12px 10px 10px var(--border);
+    overflow: hidden;
+    position: relative;
+}
+
+h1{
+    color: var(--txt);
+}
+
+.btn{
+    color: white;
+    font-size: 16px;
+    line-height: 55px;
+    font-style: 24px;
+    font-weight: 800;
+    color: #FFF;
+    display: block;
+    text-align: center;
+    border: none;
+    width: 320px;
+    height: 55px;
+    border-radius: 40px;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.btn:hover{
+    transition: 0.1s;
+    background-color: var(--sub);
+}
+
+input{
+    color: var(--txt);
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    width: 210px;
+    height: 50px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    padding: 0px 63px;
+    text-align: left;
+    border: var(--border) solid 2px;
+    border-radius: 40px;
+}
+
+::placeholder{
+    color: #BEBEBE;
+}
+
+input:focus{
+    outline-color: var(--primary);
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+.input-wrap{
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* === index.html === */
+header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+header span{
+    font-size: 20px;
+    color: var(--txt);
+}
+
+header h1{
+    position: relative;
+    color: var(--txt);
+    font-size: 36px;
+}
+
+header h1 span{
+    color: var(--primary);
+    font-size: 36px;
+}
+
+header h1::before{
+    content: "";
+    width: 30px;
+    border-top: var(--txt) solid 2px;
+    position: absolute;
+    top: 20px;
+    left: -40px;
+}
+
+header h1::after{
+    content: "";
+    width: 30px;
+    border-top: var(--txt) solid 2px;
+    position: absolute;
+    top: 20px;
+    right: -40px;
+}
+
+.form-section{
+    width: 40%;
+    padding: 0 5%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+}
+
+.form-section h1{
+    font-size: 54px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin-bottom: 50px;
+}
+
+.login-section{
+    z-index: 2;
+}
+
+.signup-section{
+    opacity: 0;
+    z-index: 1;
+}
+
+.signup-form .input-wrap i, .login-form .input-wrap i{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    font-size: 24px;
+    color: var(--border);
+}
+
+.input-wrap.error input{
+    position: relative;
+    border-color: var(--error);
+}
+
+.input-wrap.error input:focus{
+    outline-color: var(--error);
+}
+
+.input-wrap.success input{
+    border-color: var(--sub);
+}
+
+.input-wrap .error{
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    font-size: 12px;
+    color: var(--error);
+    letter-spacing: 1px;
+}
+
+.input-wrap.error .error-icon{
+    left: 285px;
+    color: var(--error);
+}
+
+.overlay-container{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.overlay-container .overlay{
+    background-color: var(--primary);
+    position: relative;
+    height: 100%;
+    width: 200%;
+    left: -100%;
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.overlay-container .overlay .overlay-section{
+    position: absolute;
+    width: 45%;
+    padding: 0 2.5%;
+    height: 100%;
+    text-align: center;
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.overlay-container .overlay .left-panel{
+    left: 0;
+    transform: translateX(0%);
+}
+
+.overlay-container .overlay .right-panel{
+    right: 0;
+    transform: translateX(0);
+}
+
+.overlay-container .overlay .overlay-section h1{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.overlay-container .overlay .overlay-section p{
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.overlay-container .overlay .overlay-section .btn{
+    background-color: var(--primary);
+    width: 324px;
+    height: 61px;
+    border: #fff solid 2px;
+    color: #fff;
+    transition: 0.1s;
+}
+
+.overlay-container .overlay .overlay-section .btn:hover{
+    background-color: #fff;
+    color: var(--primary);
+    transition: 0.1s;
+}
+
+/* === index.html Animation === */
+
+/* Move login-section to the right */
+.container.right-panel-active .login-section{
+    transform: translateX(100%);
+}
+
+/* Move overlay-container to left */
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+
+/* Move signup-section to the right and overlay on the login section */
+.container.right-panel-active .signup-section{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Move overlay to right*/
+.container.right-panel-active .overlay{
+    transform: translateX(50%);
+}
+
+/* === member.html === */
+.member-section{
+    padding: 5% 5%;
+    width: 90%;
+    height: 90%;
+    position: relative;
+}
+
+.member-section .member-index-box h1{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.member-section .member-index-box h1 span{
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: var(--primary);
+    margin: 0 5px;
+}
+
+.member-section .member-sidebar{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height:40%;
+    border-radius: 20px;
+    background-color: var(--primary);
+    padding-left: 20p;
+    left: -22.5%;
+    top: 30%;
+    width: 30%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0%);
+    z-index: 99;
+}
+
+.member-section .member-sidebar:hover{
+    transform: translateX(50%);
+}
+
+.member-section .member-sidebar .member-links{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.member-section .member-sidebar .member-link{
+    display: flex;
+    height: 25%;
+    width: 100%;
+}
+
+.member-section .member-sidebar .member-link a{
+    position: relative;
+    line-height: 73px;
+    padding-left: 100px;
+    text-align: left;
+    display: block;
+    color: var(--txt);
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.member-section .member-sidebar .member-link a i{
+    position: absolute;
+    color: var(--txt);
+    right: 25px;
+    font-size: 30px;
+    line-height: 73px;
+}
+
+.member-section .member-sidebar .member-link:hover a, .member-section .member-sidebar .member-link:hover i{
+    color: #fff;
+    transition: 0.1s;
+}
+
+.member-section .member-sidebar .member-link a i:last-child{
+    font-weight: bolder;
+}
+
+.member-section .member-showcase{
+    position: relative;
+    width: 80%;
+    height: 90%;
+}
+
+.member-index-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    opacity: 1;
+    z-index: 3;
+}
+
+.member-profile-box{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 0;
+}
+
+.member-settings-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 0;
+}
+
+.member-index-box.hide{
+    opacity: 0;
+    z-index: 0;
+}
+
+.member-profile-box.show, .member-settings-box.show{
+    opacity: 1;
+    z-index: 3;
+}
+
+.member-index-box h1{
+    text-align: center;
+}
+
+.member-index-box .input-wrap{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.member-index-box .input-wrap input{
+    width: 350px;
+    padding-left: 50px;
+}
+
+.member-index-box .input-wrap button{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--border);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.member-index-box .input-wrap button i{
+    font-size: 24px;
+}
+
+.member-index-box .input-wrap span{
+    position: absolute;
+    width: 100%;
+    top: 75px;
+    left: 0;
+    color: var(--txt);
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.member-profile-box .input-wrap span{
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--txt);
+}
+
+.member-profile-box .input-wrap input{
+    display: inline;
+    margin-right: 20px;
+    padding: 0 30px;
+    margin-bottom: 15px;
+}
+
+.member-profile-box .input-wrap button{
+    display: inline;
+    width: 100px;
+    height: 54px;
+    line-height: 54px;
+}
+
+.member-profile-box .input-wrap span:nth-child(4){
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+.member-profile-box .input-wrap .error{
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--error);
+}
+
+/* === fail.html === */
+.error-section{
+    padding: 5% 5%;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    justify-content: start;
+}
+
+.error-section h1{
+    font-size: 56px;
+    margin-bottom: 50px;
+    color: var(--primary);
+    margin: 0 5px;
+}
+
+.error-section p{
+    color: var(--txt);
+    letter-spacing: 1px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.error-section .btn{
+    position: absolute;
+    bottom: 7.5%;
+}

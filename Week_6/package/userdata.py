@@ -10,8 +10,9 @@ class DBManager:
         self.cursor = self.connection.cursor()
 
     def insertNewUser(self, name, username, password):
-        newUser = f"INSERT INTO `member` (`name`, `username`, `password`) VALUES (\"{name}\", \"{username}\", \"{password}\");"
-        self.cursor.execute(newUser)
+        newUser = "INSERT INTO `member` (`name`, `username`, `password`) VALUES (%(name)s, %(username)s, %(password)s);"
+        newUserInfo = {"name" : name, "username" : username, "password" : password}
+        self.cursor.execute(newUser, newUserInfo)
         
         try:
             self.connection.commit()
@@ -20,7 +21,7 @@ class DBManager:
             self.connection.rollback()
 
     def checkNewUser(self, newUser):
-        self.cursor.execute(f"SELECT `username` FROM `member` WHERE `username` = \"{newUser}\";")
+        self.cursor.execute("SELECT `username` FROM `member` WHERE `username` = %s;", (newUser,))
 
         try:
             if self.cursor.fetchall()[0]:
@@ -30,7 +31,7 @@ class DBManager:
             return False
 
     def getUserInfo(self, username):
-        self.cursor.execute(f"SELECT `name`, `username`, `password` FROM `member` WHERE `username` = \"{username}\";")
+        self.cursor.execute("SELECT `name`, `username`, `password` FROM `member` WHERE `username` = %s;", (username,))
 
         try:
             return self.cursor.fetchall()[0]

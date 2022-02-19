@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" type="text/css" href="/static/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" >
+
+    <title>Demosite</title>
+</head>
+<body>
+    <header class="title">
+        <span>Welcome to</span>
+        <h1><span>Demo</span>site</h1>
+    </header>
+
+    <div class="content">
+        <div class="container" id="container">
+            <!-- Login-Form -->
+            <div class="login-section form-section v-center" id="login-section">
+                <h1>Login</h1>
+                <form class="login-form v-center" id="login-form" action="/signin" method="POST">
+                    <div class="input-wrap">
+                        <input type="text" id="login-username" name="login-username" placeholder="Username">
+                        <i class='bx bxs-user' ></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="password" id="login-pwd" name="login-pwd" placeholder="Password">
+                        <i class='bx bxs-lock' ></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <button id="login-submit" class="btn">LOGIN</button>
+                </form>
+            </div>
+
+            <!-- Signup-Form -->
+            <div class="signup-section form-section v-center" id="signup-section">
+                <h1>Sign Up</h1>
+                <form class="signup-form v-center" id="signup-form" action="/signup" method="POST">
+                    <div class="input-wrap">
+                        <input type="text" id="signup-name" name="signup-name" placeholder="Name">
+                        <i class='bx bxs-user-detail'></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="text" id="signup-username" name="signup-username" placeholder="Username">
+                        <i class='bx bxs-user' ></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="password" id="signup-pwd" name="signup-pwd" placeholder="Password">
+                        <i class='bx bxs-lock-open' ></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <div class="input-wrap">    
+                        <input type="password" id="signup-repwd" placeholder="Confirm Password">
+                        <i class='bx bxs-lock' ></i>
+                        <div class="error"></div>
+                        <i class="error-icon"></i>
+                    </div>
+                    <button id="signup-submit" class="btn">REGISTER NOW</button>
+                </form>
+            </div>
+
+            <!-- Overlay-Panel -->
+            <div class="overlay-container">
+                <div class="overlay h-center">
+                    <div class="left-panel overlay-section v-center">
+                        <h1>Welcome Back !</h1>
+                        <p>
+                        How are you today?</br>
+                        Login and share your day with us! 
+                        </p>
+                        <button id="login-button" class="btn">LOGIN</button>
+                    </div>
+                    <div class="right-panel overlay-section v-center">
+                        <h1>New Friend ?</h1>
+                        <p>Join us and share your wonderful ideas with our members here!</p>
+                        <button id="signup-button" class="btn">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/index.js"></script>
+</body>
+</html>
