@@ -41,7 +41,7 @@ memberConfirm.addEventListener("click", () => {
 
     fetch("/api/member", option).then((response) => {
         const promise = response.json();
-        promise. then((result) => {
+        promise.then((result) => {
             const ok = result.ok;
             const error = result.error;
 
@@ -55,7 +55,6 @@ memberConfirm.addEventListener("click", () => {
                 memberNameResult.classList.add("error");
                 memberNameResult.innerText="Oops! You must login before changing your name.";
             }
-
-        })
+        });
     });
 });
